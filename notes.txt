@@ -1,0 +1,19 @@
+Design Notes
+
+Visual Design
+- Resolution 320x200
+- Start with 256 colors
+- Artwork is Windows BMP (256 Color Indexed)
+-- Converted to binary using custom tool (bnp2cx16) I wrote
+-- Cars are 48x82px
+-- Trucks are 58x136px
+-- Tank is 74x146px
+-- Helicopter is 62x132px
+-- Buses are 60x142px
+-- Whole sprite sheet is 500x576px
+
+Gameplay Design
+- TODO
+
+Sound Design
+- TODO
