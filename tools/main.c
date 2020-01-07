@@ -133,7 +133,7 @@ int main(int argc, char** argv) {
 	
 	fseek(stream, 0, SEEK_SET);
 
-	bytes_read = fread(&fheader, sizeof(MYBITMAPFILEHEADER), 1, stream);
+	bytes_read = fread(&fheader, 1, sizeof(MYBITMAPFILEHEADER), stream);
 	if (bytes_read != sizeof(MYBITMAPFILEHEADER)) {
 		printf("File header not right size!!\n");
 	}
