@@ -11,10 +11,10 @@ credits to this file.
 
 Development Environment:
 
-Windows 10 Release 1903
-Visual Studio Code w/ACME Assembler Plugin
-ACME Cross Assember for Windows v0.96.4
-x16-emulator r36
+Windows 10 Release 1903<br>
+Visual Studio Code w/ACME Assembler Plugin<br>
+ACME Cross Assember for Windows v0.96.4<br>
+x16-emulator r36<br>
 
 Paths in compile.bat are relative to the source directory.  You can change them to the locations of 
 your toolchain installation.
