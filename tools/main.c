@@ -89,6 +89,7 @@ int main(int argc, char** argv) {
 	MYBITMAPFILEHEADER fheader;
 	MYBITMAPINFOHEADER infoHeader;
 	size_t bytes_read = 0;
+	uint16_t magic = 0;
 
 	memset(&fheader, 0, sizeof(MYBITMAPFILEHEADER));
 	memset(&infoHeader, 0, sizeof(MYBITMAPINFOHEADER));
@@ -182,12 +183,15 @@ int main(int argc, char** argv) {
 		return 0;
 	}
 
+	fwrite(&magic, sizeof(uint16_t), 1, szPalFile);
+
 	MYRGB* palette = (MYRGB*)malloc(sizeof(MYRGB) * num_pal_entries);
 	if (!palette)
 	{
 		printf("Could not allocate palette RAM!!\n");
 	}
 
+	
 	bytes_read = fread(palette, sizeof(MYRGB), num_pal_entries, stream);
 	if (bytes_read != num_pal_entries)
 		printf("ERROR:  Did not read enough palette entries!!");
@@ -255,6 +259,8 @@ int main(int argc, char** argv) {
 		stream = 0;
 		return 0;
 	}
+
+	fwrite(&magic, sizeof(uint16_t), 1, szOutFile);
 
 	uint8_t* bitmap = (uint8_t*)malloc(sizeof(uint8_t) * datasize);
 	if (!bitmap)
