@@ -112,6 +112,5 @@ start:
     jmp *
     rts
 
-cars: !bin "cars.x16"
-
-pal: !bin "cars.pal"
+load_bitmaps:
+    
